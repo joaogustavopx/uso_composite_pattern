@@ -34,7 +34,7 @@ abstract class TSqlInstruction{
     *@param $criteria = objeto do tipo TCriteria
     */
 
-    public function setCriteria(){
+    public function setCriteria($criteria){
         $this->criteria = $criteria;
     }
     /*método getInstruction 
