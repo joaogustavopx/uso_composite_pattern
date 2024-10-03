@@ -1,6 +1,5 @@
 <?php
 // arquivo para teste de funcionamento da classe TSqlInsert.class
-
 /* função __autoload
 *carrega uma classe quando ela é necessaria, ou seja, quando ela é instanciada pela primeira vez
 */
