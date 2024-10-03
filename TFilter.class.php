@@ -97,5 +97,6 @@ public function dump()
   return "{$this->variable} {$this->operator} {$this->value}";
 }
 
-}
+
+ }
 ?>

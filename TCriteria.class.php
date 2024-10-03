@@ -4,7 +4,8 @@
 * Esta classe provê uma interface para definição de critérios
 */
 
-class TCriteria extends TExpression{
+class TCriteria extends TExpression
+{
     private $expressions; //armazena a lista de instruções
     private $operators; //armazena a lista de operadores
     private $properties; //propriedades do critério
@@ -20,9 +21,11 @@ class TCriteria extends TExpression{
     *@param $expressions = expressão (objeto TExpression)
     *@param $operator = operador lógico de comparação
     */
-    public function add(TExpression $expression, $operator = self::AND_OPERATOR){
+    public function add(TExpression $expression, $operator = self::AND_OPERATOR)
+    {
         //na primeira vez, não precisamos de operador lógico para concatenar
-        if(empty($this->expressions)){
+        if(empty($this->expressions))
+        {
             $operator = NULL;
         }
         //agrega o resultado da expressão a lista de expressões
@@ -33,12 +36,15 @@ class TCriteria extends TExpression{
     *retorna a expressão final
     */
 
-    public function dump(){
+    public function dump()
+    {
         //concatena a lista de expressões
 
-        if(count($this->expressions) > 0){
+        if(count($this->expressions) > 0)
+        {
         $result = '';
-        foreach($this->expressions as $i => $expression){
+        foreach($this->expressions as $i => $expression)
+          {
             $operator = $this->operators[$i];
             //concatena o operador com a respectiva expressão
             $result .= $operator . $expression->dump().' ';
@@ -53,19 +59,25 @@ class TCriteria extends TExpression{
     *@param = $property = propriedade
     *@param = $value = valor 
 */
-public function setProperty($property, $value){
-    if(isset($value)){
+public function setProperty($property, $value)
+{
+    if(isset($value))
+    {
         $this->properties[$property] = $value;
-    }else{
+    }
+    else
+    {
         $this->properties[$property] = NULL;
-      }
+    }
    }
    /* método getproperty()
    *retorna o valor da propriedade 
    *@param $property = propriedade
    */
-  public function getProperty($property){
-    if(isset($this->properties[$property])){
+  public function getProperty($property)
+  {
+    if(isset($this->properties[$property]))
+    {
     return $this->properties[$property];
     }
   }
